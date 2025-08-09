@@ -1,0 +1,66 @@
+:root{
+  --bg:#0b0d10;
+  --card:#141820;
+  --muted:#9aa3b2;
+  --text:#e8eef8;
+  --accent:#2f7bf6; /* blu */
+  --accent-2:#59a0ff;
+  --ok:#20c997;
+  --danger:#ff6b6b;
+  --radius:16px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:linear-gradient(180deg,#0a0c10,#0b0d10 40%,#0b0d10);
+  color:var(--text);
+}
+
+.container{max-width:960px;margin:0 auto;padding:20px}
+.header,.footer{
+  display:flex;gap:16px;align-items:center;justify-content:space-between;
+}
+.logo{height:48px}
+.logo.small{height:28px;opacity:.9}
+
+.title h1{margin:0 0 4px 0;font-size:28px}
+.subtitle{margin:0;color:var(--muted)}
+
+.card{
+  background:var(--card);border:1px solid #1e2430;border-radius:var(--radius);
+  padding:24px;margin:20px 0;box-shadow:0 10px 30px rgba(0,0,0,.35)
+}
+.lead{color:#c6cfdd;line-height:1.6}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:12px}
+.field label{display:block;margin:0 0 6px;color:var(--muted);font-size:14px}
+input[type="text"],input[type="email"]{
+  width:100%;padding:12px;border-radius:12px;border:1px solid #2a3342;background:#0f1218;color:var(--text)
+}
+.checkbox{display:flex;gap:10px;align-items:flex-start;color:#cfd7e6;font-size:14px}
+.checkbox a{color:var(--accent)}
+.full{grid-column:1/-1}
+
+.btn{
+  border:none;border-radius:999px;padding:12px 18px;background:#243045;color:var(--text);
+  cursor:pointer;font-weight:600;transition:.2s all ease-out;opacity:.9
+}
+.btn:hover{opacity:1;transform:translateY(-1px)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:white}
+
+.hidden{display:none}
+
+.progress{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.progress .bar{flex:1;height:8px;border-radius:999px;background:#202838;overflow:hidden}
+#barFill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+.options{display:grid;gap:12px;margin-top:8px}
+.options button{
+  text-align:left;padding:14px;border-radius:12px;border:1px solid #293245;background:#111622;color:var(--text);
+}
+.options button.selected{border-color:var(--accent);box-shadow:0 0 0 2px rgba(47,123,246,.3) inset}
+
+.mini{color:#cfd7e6;line-height:1.7}
+@media (max-width:720px){ .grid{grid-template-columns:1fr} .title h1{font-size:22px} }
