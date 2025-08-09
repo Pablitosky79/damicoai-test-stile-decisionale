@@ -1,0 +1,11 @@
+{
+  "name": "damicoai-test-stile-decisionale",
+  "version": "1.0.0",
+  "description": "Test stile decisionale damico.ai - frontend statico + funzione CSV",
+  "scripts": {
+    "start": "node",
+    "dev": "vercel dev"
+  },
+  "type": "module",
+  "dependencies": {}
+}
