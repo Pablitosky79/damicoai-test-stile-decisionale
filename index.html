@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>damico.ai – Test Stile Decisionale (consumer)</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="container header">
+    <img src="assets/logo.png" alt="Logo damico.ai" class="logo">
+    <div class="title">
+      <h1>damico.ai – Test Stile Decisionale (consumer)</h1>
+      <p class="subtitle">Scopri il tuo stile decisionale in 60 secondi</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Schermata 0 -->
+    <section id="screen-welcome" class="card">
+      <p class="lead">
+        Ognuno decide in modo diverso: c’è chi si butta, chi ascolta, chi analizza e chi mette ordine.
+        Con questo test di 10 domande scoprirai il tuo <strong>stile decisionale prevalente</strong> e il
+        <strong>GPT autenticato ORMA</strong> più adatto a te.
+      </p>
+
+      <form id="user-form" class="grid">
+        <div class="field">
+          <label for="nome">Nome*</label>
+          <input id="nome" name="nome" type="text" required />
+        </div>
+        <div class="field">
+          <label for="cognome">Cognome*</label>
+          <input id="cognome" name="cognome" type="text" required />
+        </div>
+        <div class="field full">
+          <label for="email">Email*</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+
+        <label class="checkbox full">
+          <input id="consenso" type="checkbox" required />
+          Confermo il <strong>consenso informato</strong>*
+        </label>
+        <label class="checkbox full">
+          <input id="privacy" type="checkbox" required />
+          Accetto <strong>privacy e trattamento dati</strong>* – <a href="https://www.damico.ai/privacy-policy" target="_blank" rel="noopener">leggi la privacy</a>
+        </label>
+
+        <div class="full">
+          <button id="startBtn" type="submit" class="btn" disabled>Inizia il test</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Test -->
+    <section id="screen-quiz" class="card hidden">
+      <div class="progress"><span id="progressText">1/10</span><div class="bar"><div id="barFill"></div></div></div>
+      <h2 id="questionText"></h2>
+      <div id="options" class="options"></div>
+      <div class="actions">
+        <button id="nextBtn" class="btn" disabled>Prosegui</button>
+      </div>
+    </section>
+
+    <!-- Suspense -->
+    <section id="screen-wait" class="card hidden">
+      <h2>⏳ Elaborazione in corso…</h2>
+      <p>Stiamo analizzando le tue risposte. Tra pochi secondi scoprirai il tuo <strong>stile decisionale prevalente</strong> e il <strong>GPT autenticato ORMA</strong> più adatto a te.</p>
+    </section>
+
+    <!-- Rivelazione -->
+    <section id="screen-result" class="card hidden">
+      <h2 id="resultTitle">✨ Il tuo stile decisionale è…</h2>
+      <p id="miniProfile" class="mini"></p>
+      <a id="ctaLink" class="btn primary" target="_blank" rel="noopener">Accedi ora al tuo GPT Autenticato ORMA</a>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <img src="assets/logo.png" alt="Logo damico.ai" class="logo small">
+    <span>© 2025 damico.ai</span>
+  </footer>
+
+  <script src="assets/script.js" defer></script>
+</body>
+</html>
